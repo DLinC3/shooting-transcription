@@ -97,7 +97,7 @@ function [xtraj, utraj, ktraj, Ktraj] = ilqr(x0, xtraj, utraj, ktraj, Ktraj,N,dt
 end
 
 %==========================================================================
-%   get Q-terms (fill in)
+%   get Q-terms 
 %==========================================================================
 function [Qx, Qu, Qxx, Qux, Quu]= Q_terms (gx, gu, gxx, gux,guu, fx, fu, Vx, Vxx)
     
@@ -110,7 +110,7 @@ function [Qx, Qu, Qxx, Qux, Quu]= Q_terms (gx, gu, gxx, gux,guu, fx, fu, Vx, Vxx
 end
 
 %==========================================================================
-%   get gains (fill in)
+%   get gains 
 %==========================================================================
 function [K, v]= gains(Qx,Qu,Qxx,Qux,Quu)
     v = -inv(Quu) * Qu;
@@ -118,7 +118,7 @@ function [K, v]= gains(Qx,Qu,Qxx,Qux,Quu)
 end
 
 %==========================================================================
-%   get V terms (fill in)
+%   get V terms 
 %==========================================================================
 function [Vx, Vxx] = Vterms (Qx,Qu,Qxx,Qux,Quu,K,k)
     Vx = Qx - Qux' * inv(Quu) * Qu;
@@ -168,7 +168,7 @@ Jf = 0.5*(x-xd)'*Qf*(x-xd);
 end
 
 %==========================================================================
-%   final cost gradients (fill in)
+%   final cost gradients 
 %==========================================================================
 function [gx, gu, gxx, gux, guu] = final_cost_gradients(x,u,xd,Qf)
     gx = Qf * (x - xd);
@@ -179,7 +179,7 @@ function [gx, gu, gxx, gux, guu] = final_cost_gradients(x,u,xd,Qf)
 end
 
 %==========================================================================
-%   cost gradients (fill in)
+%   cost gradients 
 %==========================================================================
 function [gx, gu, gxx, gux, guu] = cost_gradients(x,u,xd,Q,R)
     gx = Q * x;

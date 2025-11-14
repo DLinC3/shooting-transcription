@@ -1,21 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % direct_transcription_fmincon - Optimal swing-up trajectory via direct transcription
 %
-% This function computes an optimal trajectory for swinging up a cartpole
-% from the downward position to the upward (inverted) position using
-% direct transcription with MATLAB's FMINCON solver.
-%
-% The optimization problem minimizes a quadratic cost function subject to
-% dynamics constraints enforced via Euler integration at discrete time steps.
-%
-% External dependencies (must be on MATLAB path):
 %   - init_cartpole_params()    : Initialize system parameters
 %   - cartpole_dynamics(t,x,u,param) : System dynamics (returns xdot)
 %   - draw_cartpole(t,x,param)  : Visualization function
 %
-% Author: Denglin
-% Date: 05/14/2025
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 function direct_transcription_fmincon
 
 clear all; close all;

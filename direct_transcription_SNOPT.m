@@ -2,19 +2,10 @@ function direct_transcription_SNOPT
 % direct_transcription_SNOPT
 % Direct transcription optimization for cartpole swing-up using analytical gradients and SNOPT.
 %
-% This implementation uses Euler integration for dynamics discretization
-% and provides exact gradients to SNOPT for efficient optimization.
-%
-% External dependencies (must be on MATLAB path):
 %   - init_cartpole_params()    : Initialize system parameters
 %   - cartpole_dynamics(t,x,u,param) : System dynamics (returns xdot)
 %   - draw_cartpole(t,x,param)  : Visualization function
 %   - cartpole_grads(t,x,u,param) : Dynamics gradients (returns [dfdx, dfdu])
-%
-% Tested with SNOPT7 MATLAB interface.
-%
-% Author: Denglin
-% Date: 05/13/2025
 
 clear all; close all;
 
